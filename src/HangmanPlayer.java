@@ -12,10 +12,11 @@ public class HangmanPlayer {
 		return new Hangman(tempWord, tempInt);	
 	}
 	
-	public static boolean displayAndUpdate(Hangman h, String guessed) {
+	public static boolean displayAndUpdate(Hangman g, String guessed) {
 		boolean word_complete = true;
-		String word = h.getGuessWord();
+		String word = g.getGuessWord();
 		String currentLetter = "";
+		System.out.println("You have " + (g.getMaxGuesses() - g.getGuessCount()) + " strikes remaining.");
 		for (int i = 0; i < word.length(); i++) {
 			currentLetter = word.substring(i, i + 1);
 			if (guessed.indexOf(currentLetter) != -1) {
@@ -27,11 +28,11 @@ public class HangmanPlayer {
 		}
 		System.out.println();
 		if (word_complete) {
-			h.updateGameStatus(true);		
+			g.updateGameStatus(true);		
 		} else {
-			h.updateGameStatus(false);
+			g.updateGameStatus(false);
 		}
-		return h.getGameStatus();
+		return g.getGameStatus();
 	}
 	
 	public static void main(final String[] args) {
