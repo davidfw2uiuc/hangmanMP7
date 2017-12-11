@@ -68,33 +68,13 @@ public class Hangman {
 		}
 	}
 	
-	/**
-	 * @param str - player 2's guess. 
-	 * @return true if guess is valid, false otherwise. 
-	 */
-	
-	
-	/**
-	 * Guess method for guessing words
-	 * 
-	 * @param str - player 2's guess.
-	 * @return true if str equals guessWord, false otherwise
-	 */
-	public boolean guessWord(String str) {
-		if (str.equals(this.guessWord)) { 
-			return true;
-		}
-		this.guessCount++;
-		return false;
-	}
-	
 	/** 
 	 * Guess method for individual letters. 
 	 * 
 	 * @param str - player 2's guess
 	 * @return true if str is in guessword, false otherwise. 
 	 */
-	public boolean guessLetter(String str) {
+	public boolean guess(String str) {
 		if (guessWord.contains(str)) {
 			return true;
 		}

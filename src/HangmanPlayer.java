@@ -12,16 +12,6 @@ public class HangmanPlayer {
 		return new Hangman(tempWord, tempInt);	
 	}
 	
-	public static boolean guess(Hangman h, String str) {
-		boolean guess_successful;
-		if (str.length() == h.getGuessWord().length()) {
-			guess_successful = h.guessWord(str);
-		} else {
-			guess_successful = h.guessLetter(str);
-		}
-		return guess_successful;
-	}
-	
 	public static boolean displayAndUpdate(Hangman h, String guessed) {
 		boolean word_complete = true;
 		String word = h.getGuessWord();
@@ -55,10 +45,9 @@ public class HangmanPlayer {
 			}
 			System.out.println("Guess a letter or word:");
 			current = myScan.next().toUpperCase();
-			if (guess(game, current)) {
+			if (game.guess(current)) {
 				guessedLetters += current;
 			}
 		}
-		
 	}
 }
