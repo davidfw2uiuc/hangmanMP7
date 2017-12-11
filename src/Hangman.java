@@ -60,8 +60,8 @@ public class Hangman {
 	public void updateGameStatus(boolean b) {
 		if (guessCount >= maxGuesses) {
 			this.gameOver = true;
-			System.out.println("Well poo. You're out of guesses. \n"
-					+ "Better luck next time!");
+			System.out.println("Well poo. You're out of guesses. \n The word was " 
+			+ guessWord +  ".\n Better luck next time!");
 		} else if (b == true) {
 			this.gameOver = true;
 			System.out.println("You guessed the word! Congrats!");
