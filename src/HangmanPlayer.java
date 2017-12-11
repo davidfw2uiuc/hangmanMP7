@@ -31,7 +31,7 @@ public class HangmanPlayer {
 		} else {
 			h.updateGameStatus(false);
 		}
-		return word_complete;
+		return h.getGameStatus();
 	}
 	
 	public static void main(final String[] args) {
